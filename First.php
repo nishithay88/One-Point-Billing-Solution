@@ -102,13 +102,13 @@ function draw() {
         maxNum = images.length - 1,
         myCanvas = document.getElementById('myCanvas'),
         ctx = myCanvas.getContext('2d'),
-        me = this; //this we need for setTimeout()
+        me = this; //used to setTimeout()
     //third part of chain, have a function to invoke by setTimeout
     this._draw = function() {
         ctx.clearRect(0, 0, myCanvas.width, myCanvas.height)
         ctx.drawImage(images[counter++], 0, 0);
         if (counter > maxNum) counter = 0;
-        setTimeout(me._draw, 3000); //here we use me instead of this
+        setTimeout(me._draw, 3000); 
     }
     this._draw(); //START the loop
 }
